@@ -2,10 +2,12 @@
 
 A module for Foundry VTT that allows send [`Actors`](https://foundryvtt.com/api/v10/classes/client.Actor.html) data to an endpoint in a regular interval
 
-# System Compatibility
-**PDSDA** is current compatible with the following systems.
+# Compatibility
 
-- Dungeons & Dragons 5th Edition (dnd5e)
+**PDSDA** is current compatible with:
+
+- Foundry v10.286 and above
+- System [Dungeons & Dragons 5th Edition (dnd5e)](https://github.com/foundryvtt/dnd5e) - Version 2.1.2
 
 # Installation
 
@@ -18,6 +20,10 @@ https://github.com/ingogbe/fvtt-pdsda/releases/download/v1.0.0/module.json
 2. Click the `Install Module` button on the bottom of the screen
 3. The `Install Module` window will popout, enter the manifest URL, provided above, on the `Manifest URL` field
 4. Click on the `Install` button
+
+![image](https://user-images.githubusercontent.com/6909132/212492683-b7e6fea0-11b0-4c0d-9421-685ad970e799.png)
+
+If you wish to manually install the module, you must clone or extract it into the `Data/modules/fvtt-pdsda` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
 
 ## Post Data format
 

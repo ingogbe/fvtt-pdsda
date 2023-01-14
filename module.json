@@ -44,9 +44,9 @@
   ],
   "socket": true,
   "url": "https://github.com/ingogbe/fvtt-pdsda",
-  "manifest": "https://raw.githubusercontent.com/ingogbe/fvtt-pdsda/v1.0.0/module.json",
-  "download": "https://github.com/ingogbe/fvtt-pdsda/archive/refs/tags/v1.0.0.zip",
-  "readme": "https://raw.githubusercontent.com/ingogbe/fvtt-pdsda/v1.0.0/README.md",
+  "manifest": "https://raw.githubusercontent.com/ingogbe/fvtt-pdsda/v1.1.0/module.json",
+  "download": "https://github.com/ingogbe/fvtt-pdsda/archive/refs/tags/v1.1.0.zip",
+  "readme": "https://raw.githubusercontent.com/ingogbe/fvtt-pdsda/v1.1.0/README.md",
   "bugs": "https://github.com/ingogbe/fvtt-pdsda/issues",
-  "changelog": "https://github.com/ingogbe/fvtt-pdsda/releases/tag/v1.0.0"
+  "changelog": "https://github.com/ingogbe/fvtt-pdsda/releases/tag/v1.1.0"
 }

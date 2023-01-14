@@ -25,6 +25,16 @@ https://github.com/ingogbe/fvtt-pdsda/releases/download/v1.0.0/module.json
 
 If you wish to manually install the module, you must clone or extract it into the `Data/modules/fvtt-pdsda` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
 
+## Features:
+
+- Make a request to an endpoint with simplified [Actors](https://foundryvtt.com/api/v10/classes/client.Actor.html) information in a specified time interval in milliseconds
+- Ability to pause all requests, if needed
+- Ability to log (or not) "POSTs" success and errors on browser console (feature for debug purposes)
+
+## Configuration 
+
+![image](https://user-images.githubusercontent.com/6909132/212493507-117a5f7e-ef1d-45bf-96af-8547c9c40b7e.png)
+
 ## Post Data format
 
 The data that **PDSDA** sends has only a few basic informations about the [`Actor`](https://foundryvtt.com/api/v10/classes/client.Actor.html), this is necessary to make a small payload for the POSTs and prevents the `PayloadTooLargeError` error
@@ -57,7 +67,7 @@ The data that **PDSDA** sends has only a few basic informations about the [`Acto
 }
 ```
 
-## TODO List
+## Incoming features
 
 - [`Actors`](https://foundryvtt.com/api/v10/classes/client.Actor.html)
   - Add configuration to select the `Actors` you want to send data.

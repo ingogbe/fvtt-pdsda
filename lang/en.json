@@ -1,0 +1,19 @@
+{
+  "PDSDA": {
+    "Title": "Post Data - Send Data Anywhere",
+    "Settings": {
+      "ActorEndpoint": {
+        "name": "Actors API Endpoint",
+        "hint": "An endpoint that will receive a HTTP POST request, with selected Actors data"
+      },
+      "ActorInterval": {
+        "name": "Actors API - Interval (ms)",
+        "hint": "Time interval that requests are made in milliseconds"
+      },
+      "PauseRequests": {
+        "name": "Pause all requests",
+        "hint": "If enabled, will pause all requests"
+      }
+    }
+  }
+}

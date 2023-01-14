@@ -1,0 +1,52 @@
+{
+  "id": "fvtt-pdsda",
+  "title": "Post Data - Send Data Anywhere",
+  "description": "Make a HTTP POST of Actor data to an endpoint with a configurated interval.",
+  "authors": [
+    {
+      "id": "ingogbe",
+      "name": "Ingo G B Eyng",
+      "email": "ingogbe92@gmail.com",
+      "url": "https://ingogbe.com.br/"
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10",
+    "maximum": "10"
+  },
+  "scripts": [],
+  "esmodules": ["scripts/index.js"],
+  "styles": [],
+  "system": "dnd5e",
+  "relationships": {
+    "systems": [{
+      "id": "dnd5e",
+      "type": "system",
+      "compatibility": {
+        "minimum": "2.1.2",
+        "compatible": "2.1.2"
+      }
+    }]
+  },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "socket": true,
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "readme": "",
+  "bugs": "",
+  "changelog": ""
+}

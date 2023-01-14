@@ -13,7 +13,7 @@ A module for Foundry VTT that allows send [`Actors`](https://foundryvtt.com/api/
 
 You can install it using the following manifest URL
 ```
-https://github.com/ingogbe/fvtt-pdsda/releases/download/v1.0.0/module.json
+https://raw.githubusercontent.com/ingogbe/fvtt-pdsda/v1.0.0/module.json
 ```
 
 1. Go to `Configuration and Setup` menu on your FoundryVTT and click on `Add-on Modules`

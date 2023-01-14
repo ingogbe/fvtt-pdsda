@@ -8,7 +8,7 @@ import {
 } from './constants.js';
 
 export default class UserSettings {
-	static init() {
+	static init(requester) {
     Logger.log("Registering menus");
     /*
      * game.settings.registerMenu Documentation
@@ -22,7 +22,10 @@ export default class UserSettings {
       default: false,
 			type: Boolean,
       requiresReload: false,
-      restricted: true
+      restricted: true,
+      onChange: () => { 
+        requester.restart();
+      }
     });
 
     game.settings.register(MODULE_NAMESPACE, ENABLE_POST_LOGS_SETTING, {
@@ -33,7 +36,10 @@ export default class UserSettings {
       default: false,
 			type: Boolean,
       requiresReload: false,
-      restricted: true
+      restricted: true,
+      onChange: () => { 
+        requester.restart();
+      }
     });
 
     game.settings.register(MODULE_NAMESPACE, ACTOR_ENDPOINT_SETTING, {
@@ -44,7 +50,10 @@ export default class UserSettings {
       type: String,
       requiresReload: false,
       default: "http://localhost:3000",
-      restricted: true
+      restricted: true,
+      onChange: () => { 
+        requester.restart();
+      }
     });
 
     game.settings.register(MODULE_NAMESPACE, ACTOR_INTERVAL_SETTING, {
@@ -53,9 +62,12 @@ export default class UserSettings {
       scope: "world", 
       config: true,  
       type: Number,
-      requiresReload: true,
+      requiresReload: false,
       default: 1500,
-      restricted: true
+      restricted: true,
+      onChange: () => { 
+        requester.restart();
+      }
     });
 	}
 

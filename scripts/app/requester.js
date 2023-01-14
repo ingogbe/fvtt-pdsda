@@ -2,6 +2,7 @@ import Logger from "./logger.js";
 import {
   ACTOR_ENDPOINT_SETTING,
   ACTOR_INTERVAL_SETTING,
+  ENABLE_POST_LOGS_SETTING,
   MODULE_NAMESPACE,
   PAUSE_REQUESTS_SETTING
 } from "./constants.js";
@@ -9,7 +10,9 @@ import {
 export default class Requester {
   constructor(){}
 
-	static makePost(endpoint, data, identifier = 'Requester') {
+	static makePost(identifier = 'Requester', endpoint, data) {
+    const isPostLogsEnabled = game.settings.get(MODULE_NAMESPACE, ENABLE_POST_LOGS_SETTING);
+
     fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -18,25 +21,38 @@ export default class Requester {
     body: JSON.stringify(data),
   })
     .then((response) => response)
-    .then(() => {
-      Logger.log(`${identifier} - Success on POST`);
+    .then((response) => {
+      if(isPostLogsEnabled) {
+        Logger.log(`${identifier} - Success on POST`);
+        Logger.log(response);
+      }
     })
-    .catch(() => {
-      Logger.error(`${identifier} - Error on POST`);
+    .catch(err => {
+      if(isPostLogsEnabled) {
+        Logger.error(`${identifier} - Error on POST`);
+        Logger.error(err);
+      }
     });
 	}
   
   static createImgLink(img) {
-    return `${window.location.origin}/${img}`;
+    if (img.match(new RegExp(/https?:\/\//gi))) {
+      return img;
+    } else {
+      return `${origin}${img.startsWith('/') ? '' : '/'}${img}`;
+    }
   }
 
-  start() {
+  startActorPosts() {
+    const actorPostInterval = game.settings.get(MODULE_NAMESPACE, ACTOR_INTERVAL_SETTING);
+    const isRequestsPaused = game.settings.get(MODULE_NAMESPACE, PAUSE_REQUESTS_SETTING);
+    const actorEndpoint = game.settings.get(MODULE_NAMESPACE, ACTOR_ENDPOINT_SETTING);
+
     // Start Actor POSTs
     setInterval(() => {
-      if(!game.settings.get(MODULE_NAMESPACE, PAUSE_REQUESTS_SETTING)) {
-        Requester.makePost(
-          game.settings.get(MODULE_NAMESPACE, ACTOR_ENDPOINT_SETTING),
-          game.actors.map(a => ({
+      if(!isRequestsPaused) {
+        game.actors.map(a => {
+          Requester.makePost(`Actor ${a.id} POST`, actorEndpoint, {
             id: a.id,
             name: a.name,
             img: Requester.createImgLink(a.img),
@@ -49,10 +65,13 @@ export default class Requester {
               img: Requester.createImgLink(c.img),
               level: c.system.levels
             }))
-          })),
-          'Actor POSTs'
-        );
+          }
+        )});
       }
-    }, game.settings.get(MODULE_NAMESPACE, ACTOR_INTERVAL_SETTING));
+    }, actorPostInterval);
+  }
+
+  start() {
+    this.startActorPosts();
   }
 }

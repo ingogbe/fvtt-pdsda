@@ -1,9 +1,10 @@
 import Logger from "./logger.js";
 import { 
-  ACTOR_ENDPOINT_SETTING,
-  ACTOR_INTERVAL_SETTING,
+  MODULE_NAMESPACE,
   PAUSE_REQUESTS_SETTING,
-  MODULE_NAMESPACE
+  ENABLE_POST_LOGS_SETTING,
+  ACTOR_ENDPOINT_SETTING,
+  ACTOR_INTERVAL_SETTING
 } from './constants.js';
 
 export default class UserSettings {
@@ -16,6 +17,17 @@ export default class UserSettings {
     game.settings.register(MODULE_NAMESPACE, PAUSE_REQUESTS_SETTING, {
       name: game.i18n.localize("PDSDA.Settings.PauseRequests.name"),
       hint: game.i18n.localize("PDSDA.Settings.PauseRequests.hint"),
+      scope: "world", 
+      config: true,  
+      default: false,
+			type: Boolean,
+      requiresReload: false,
+      restricted: true
+    });
+
+    game.settings.register(MODULE_NAMESPACE, ENABLE_POST_LOGS_SETTING, {
+      name: game.i18n.localize("PDSDA.Settings.EnablePostLogs.name"),
+      hint: game.i18n.localize("PDSDA.Settings.EnablePostLogs.hint"),
       scope: "world", 
       config: true,  
       default: false,

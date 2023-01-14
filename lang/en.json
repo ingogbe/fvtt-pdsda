@@ -13,6 +13,10 @@
       "PauseRequests": {
         "name": "Pause all requests",
         "hint": "If enabled, will pause all requests"
+      },
+      "EnablePostLogs": {
+        "name": "Enable POST logs",
+        "hint": "Enables success or error logs, in the browser console, from the requests made. Util for debug purposes."
       }
     }
   }

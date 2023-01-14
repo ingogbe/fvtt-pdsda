@@ -13,6 +13,10 @@
       "PauseRequests": {
         "name": "Pausar todas as requisições",
         "hint": "Se selecionado, irá pausar todas as requisições"
+      },
+      "EnablePostLogs": {
+        "name": "Habilitar POST logs",
+        "hint": "Habilita logs de sucesso ou erro, no console do navegador, das requisições feitas. Util para fins de depuração."
       }
     }
   }

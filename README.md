@@ -2,14 +2,25 @@
 
 A module for Foundry VTT that allows send [`Actors`](https://foundryvtt.com/api/v10/classes/client.Actor.html) data to an endpoint in a regular interval
 
-# Compatibility
+## Compatibility
 
 **PDSDA** is current compatible with:
 
 - Foundry v10.286 and above
 - System [Dungeons & Dragons 5th Edition (dnd5e)](https://github.com/foundryvtt/dnd5e) - Version 2.1.2
 
-# Installation
+## Installation
+
+### Using Foundry "Configuration and Setup" UI
+
+1. Go to `Configuration and Setup` menu on your FoundryVTT and click on `Add-on Modules`
+2. Click the `Install Module` button on the bottom of the screen
+3. Search by the package name `Post Data - Send Data Anywhere`
+4. Click on the `Install` button
+
+![image](https://user-images.githubusercontent.com/6909132/212720161-52852bd7-75a1-46e9-b2eb-3b091cc5dc6a.png)
+
+### Using manifest URL
 
 You can install it using the following manifest URL
 ```
@@ -21,7 +32,9 @@ https://raw.githubusercontent.com/ingogbe/fvtt-pdsda/v1.1.0/module.json
 3. The `Install Module` window will popout, enter the manifest URL, provided above, on the `Manifest URL` field
 4. Click on the `Install` button
 
-![image](https://user-images.githubusercontent.com/6909132/212492683-b7e6fea0-11b0-4c0d-9421-685ad970e799.png)
+![image](https://user-images.githubusercontent.com/6909132/212720785-334b0303-5e00-4f1a-acc6-268229f18bb0.png)
+
+### Manually
 
 If you wish to manually install the module, you must clone or extract it into the `Data/modules/fvtt-pdsda` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
 

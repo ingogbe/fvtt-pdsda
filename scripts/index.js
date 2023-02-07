@@ -1,4 +1,4 @@
-import UserSettings from "./app/settings.js";
+import UserSettings from "./app/settings/index.js";
 import Logger from "./app/logger.js";
 import Requester from "./app/requester.js";
 

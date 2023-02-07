@@ -2,6 +2,7 @@ import Logger from "./logger.js";
 import {
   ACTOR_ENDPOINT_SETTING,
   ACTOR_INTERVAL_SETTING,
+  ACTOR_SELECTOR_CHECKED_ACTOR_LIST,
   ENABLE_POST_LOGS_SETTING,
   MODULE_NAMESPACE,
   PAUSE_REQUESTS_SETTING
@@ -62,12 +63,15 @@ export default class Requester {
   startActorPosts() {
     const actorPostInterval = game.settings.get(MODULE_NAMESPACE, ACTOR_INTERVAL_SETTING);
     const actorEndpoint = game.settings.get(MODULE_NAMESPACE, ACTOR_ENDPOINT_SETTING);
+    const checkedActors = game.settings.get(MODULE_NAMESPACE, ACTOR_SELECTOR_CHECKED_ACTOR_LIST);
 
     if (!this.actorInterval) {
       // Start Actor POSTs
       this.actorInterval = setInterval(() => {
         if(!this.isRequestsPaused) {
-          game.actors.map(a => {
+          checkedActors.forEach(actorId => {
+            const a = game.actors.get(actorId);
+
             Requester.makePost({
               identifier: `Actor ${a.id} POST`,
               endpoint: actorEndpoint,

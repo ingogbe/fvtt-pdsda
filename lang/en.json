@@ -18,6 +18,18 @@
         "name": "Enable POST logs",
         "hint": "Enables success or error logs, in the browser console, from the requests made. Util for debug purposes."
       }
+    },
+    "ActorSelector": {
+      "Window": {
+        "title": "Post Data - Send Data Anywhere - Actor Selector",
+        "subtitle": "Available actors",
+        "savebutton": "Save selected"
+      },
+      "SettingsMenu": {
+        "name": "Actor Selector",
+        "label": "Choose Actors",
+        "hint": "Choose which actors you want to send the data"
+      }
     }
   }
 }

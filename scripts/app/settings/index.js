@@ -1,15 +1,16 @@
-import Logger from "./logger.js";
+import Logger from "../logger.js";
+import ActorSelectorSettings from "./actorSelector.js";
 import { 
   MODULE_NAMESPACE,
   PAUSE_REQUESTS_SETTING,
   ENABLE_POST_LOGS_SETTING,
   ACTOR_ENDPOINT_SETTING,
   ACTOR_INTERVAL_SETTING
-} from './constants.js';
+} from '../constants.js';
 
 export default class UserSettings {
 	static init(requester) {
-    Logger.log("Registering menus");
+    Logger.log("Registering User Settings");
     /*
      * game.settings.registerMenu Documentation
      * https://foundryvtt.com/api/classes/client.ClientSettings.html#register
@@ -69,6 +70,8 @@ export default class UserSettings {
         requester.restart();
       }
     });
+
+    ActorSelectorSettings.init(requester);
 	}
 
 }

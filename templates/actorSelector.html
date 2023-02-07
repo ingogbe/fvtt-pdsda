@@ -1,0 +1,24 @@
+<form onsubmit="event.preventDefault();" autocomplete="off">
+  <h2>{{localize 'PDSDA.ActorSelector.Window.subtitle'}}</h2>
+
+  <section class="fvtt-pdsda-actor-section">
+    {{#each actors}}
+      <div class="fvtt-pdsda-player-row">
+        <input type="checkbox" id="fvtt-psda-actor-{{this.id}}" value="{{this.id}}" name="{{this.id}}" {{checked this.checked}} />
+
+        <div class="fvtt-pdsda-avatar">
+          <img src="{{this.img}}" alt="Usuário" class="fvtt-pdsda-avatar-image">
+          <img src="/modules/fvtt-pdsda/assets/actorframe.png" alt="Moldura" class="fvtt-pdsda-avatar-frame">
+        </div>
+
+        <label for="fvtt-psda-actor-{{this.id}}" class="fvtt-pdsda-actor-label">{{this.name}}</label>
+      </div>
+    {{/each}}
+	</section>
+
+  <footer>
+    <button type="submit" name="submit">
+      <i class="fas fa-save"></i>{{localize 'PDSDA.ActorSelector.Window.savebutton'}}
+    </button>
+  </footer>
+</form>
